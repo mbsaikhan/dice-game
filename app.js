@@ -53,7 +53,7 @@ function initGame() {
 }
 
 // Шоог шидэх эвент листенер
-document.querySelector(".btn-roll").addEventListener("click", function() {
+document.querySelector(".btn-roll").addEventListener("click", function () {
   if (isNewGame) {
     // 1 - 6 доторх санамсаргүй нэг тоо гаргаж авна
     var diceNumber = Math.floor(Math.random() * 6) + 1;
@@ -68,9 +68,8 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
     if (diceNumber !== 1) {
       // 1-ээс ялгаатай тоо буулаа. Буусан тоог тоглогчид нэмж өгнө
       roundScore = roundScore + diceNumber;
-      document.getElementById(
-        "current-" + activePlayer
-      ).textContent = roundScore;
+      document.getElementById("current-" + activePlayer).textContent =
+        roundScore;
     } else {
       // 1 буусан тул тоглогчийн ээлжийг энэ хэсэгт сольж өгнө.
       switchToNextPlayer();
@@ -81,7 +80,7 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
 });
 
 // HOLD товчны эвент листенер
-document.querySelector(".btn-hold").addEventListener("click", function() {
+document.querySelector(".btn-hold").addEventListener("click", function () {
   if (isNewGame) {
     // Уг тоглогчийн цуглуулсан ээлжний оноог глобаль оноон дээр нь нэмж өгнө.
     scores[activePlayer] = scores[activePlayer] + roundScore;
